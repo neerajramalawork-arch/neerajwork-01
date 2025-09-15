@@ -1,5 +1,5 @@
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
-import profileImage from '@/assets/neeraj-new-profile.jpg';
+import profileImage from '@/assets/neeraj-profile.avif';
 
 const Hero = () => {
   const scrollToSection = (href: string) => {

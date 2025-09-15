@@ -33,7 +33,15 @@ const Hero = () => {
                 Get In Touch
                 <ArrowRight className="ml-2 h-4 w-4" />
               </button>
-              <button className="btn-outline">
+              <button 
+                className="btn-outline"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = 'https://i.postimg.cc/Lsh8M8M5/file-000000009ed061fbbf1f724f14d0a852.png';
+                  link.download = 'Neeraj_Ramala_Resume.png';
+                  link.click();
+                }}
+              >
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume
               </button>

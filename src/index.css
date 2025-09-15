@@ -9,51 +9,49 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 215 25% 27%;
+    --foreground: 0 0% 9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card-foreground: 0 0% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    --popover-foreground: 0 0% 9%;
 
-    --primary: 217 91% 60%;
+    --primary: 0 0% 9%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 13% 91%;
-    --secondary-foreground: 215 25% 27%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
 
-    --muted: 220 13% 91%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 217 91% 60%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 9%;
 
     --radius: 0.75rem;
 
-    /* Tech-focused color palette */
-    --tech-blue: 217 91% 60%;
-    --tech-blue-dark: 217 91% 45%;
-    --tech-blue-light: 217 91% 75%;
-    --tech-gray: 215 25% 27%;
-    --tech-gray-light: 215 20% 65%;
-    --tech-gray-lighter: 220 13% 91%;
-    --tech-accent: 200 100% 70%;
+    /* Minimalist B&W palette */
+    --dark-accent: 0 0% 15%;
+    --dark-gray: 0 0% 20%;
+    --medium-gray: 0 0% 45%;
+    --light-gray: 0 0% 90%;
+    --lighter-gray: 0 0% 96%;
 
     /* Gradients */
-    --gradient-tech: linear-gradient(135deg, hsl(var(--tech-blue)), hsl(var(--tech-accent)));
-    --gradient-subtle: linear-gradient(135deg, hsl(var(--background)), hsl(var(--tech-gray-lighter)));
+    --gradient-subtle: linear-gradient(135deg, hsl(var(--background)), hsl(var(--lighter-gray)));
+    --gradient-dark: linear-gradient(135deg, hsl(var(--dark-accent)), hsl(var(--dark-gray)));
 
     /* Shadows */
-    --shadow-tech: 0 10px 30px -10px hsl(var(--tech-blue) / 0.3);
-    --shadow-card: 0 4px 6px -1px hsl(var(--tech-gray) / 0.1);
+    --shadow-minimal: 0 1px 3px 0 hsl(var(--foreground) / 0.1);
+    --shadow-card: 0 4px 6px -1px hsl(var(--foreground) / 0.1);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -77,33 +75,33 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 215 28% 17%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 9%;
+    --foreground: 0 0% 98%;
 
-    --card: 215 28% 17%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 215 28% 17%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
 
-    --secondary: 215 25% 27%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 215 25% 27%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 25% 27%;
-    --input: 215 25% 27%;
-    --ring: 217 91% 60%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 98%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -129,11 +127,11 @@ All colors MUST be HSL.
 @layer components {
   /* Hero section styles */
   .hero-gradient {
-    background: var(--gradient-tech);
+    background: var(--gradient-subtle);
   }
   
   .hero-text {
-    @apply text-6xl md:text-7xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+    @apply text-6xl md:text-7xl font-bold text-foreground;
   }
   
   .hero-subtitle {
@@ -157,15 +155,15 @@ All colors MUST be HSL.
   }
   
   .skill-progress {
-    @apply h-full bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-1000 ease-out;
+    @apply h-full bg-primary rounded-full transition-all duration-1000 ease-out;
   }
 
   /* Button variants */
   .btn-hero {
     @apply inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-lg;
-    @apply bg-primary text-primary-foreground hover:bg-primary/90;
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
-    box-shadow: var(--shadow-tech);
+    @apply bg-primary text-primary-foreground hover:bg-accent;
+    @apply transition-all duration-300 hover:scale-105;
+    box-shadow: var(--shadow-minimal);
   }
   
   .btn-outline {
@@ -190,7 +188,7 @@ All colors MUST be HSL.
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+    @apply text-primary font-bold;
   }
   
   .transition-smooth {

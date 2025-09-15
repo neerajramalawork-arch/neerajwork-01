@@ -1,10 +1,14 @@
-import { Link } from 'react-router-dom';
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 import profileImage from '@/assets/neeraj-profile.jpg';
 
 const Hero = () => {
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section className="min-h-screen flex items-center justify-center pt-20 px-6">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -22,10 +26,13 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Link to="/contact" className="btn-hero">
+              <button 
+                onClick={() => scrollToSection('#contact')}
+                className="btn-hero"
+              >
                 Get In Touch
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </button>
               <button className="btn-outline">
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume
@@ -61,7 +68,7 @@ const Hero = () => {
           {/* Profile Image */}
           <div className="animate-slide-in-left lg:order-first">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl transform rotate-6 animate-float"></div>
+              <div className="absolute inset-0 bg-secondary rounded-2xl transform rotate-6 animate-float"></div>
               <img
                 src={profileImage}
                 alt="Neeraj Ramala"

@@ -1,40 +1,10 @@
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 import profileImage from '@/assets/neeraj-profile.avif';
-import { useToast } from '@/hooks/use-toast';
 
 const Hero = () => {
-  const { toast } = useToast();
-  
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     element?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const downloadResume = async () => {
-    const resumeUrl = 'https://i.postimg.cc/Lsh8M8M5/file-000000009ed061fbbf1f724f14d0a852.png';
-    
-    try {
-      const response = await fetch(resumeUrl);
-      const blob = await response.blob();
-      
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = 'Neeraj_Ramala_Resume.png';
-      link.click();
-      
-      URL.revokeObjectURL(link.href);
-      toast({
-        title: "Resume Downloaded",
-        description: "The resume has been downloaded successfully."
-      });
-    } catch (error) {
-      // Fallback: open in new tab
-      window.open(resumeUrl, '_blank');
-      toast({
-        title: "Download Fallback",
-        description: "Opening resume in new tab. Right-click to save the image."
-      });
-    }
   };
 
   return (
@@ -65,7 +35,7 @@ const Hero = () => {
               </button>
               <button 
                 className="btn-outline"
-                onClick={downloadResume}
+                onClick={() => window.open('https://i.postimg.cc/Lsh8M8M5/file-000000009ed061fbbf1f724f14d0a852.png', '_blank')}
               >
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume

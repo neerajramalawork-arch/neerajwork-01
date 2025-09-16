@@ -101,28 +101,28 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-6">
-      <div className="container mx-auto max-w-6xl">
+    <section id="contact" className="section-padding px-6">
+      <div className="container mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
             Get In Touch
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Let's connect and discuss opportunities, collaborations, or just have a conversation about technology.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Information */}
-          <div className="animate-fade-in-up">
-            <Card className="tech-card border-0 shadow-none">
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-4">
-                  <MessageCircle className="h-6 w-6 text-primary" />
-                  <CardTitle className="text-2xl text-gradient">Let's Connect</CardTitle>
+          <div className="animate-slide-up">
+            <Card className="portfolio-card border-0 shadow-card">
+              <CardHeader className="pb-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <MessageCircle className="h-8 w-8 text-primary" />
+                  <CardTitle className="text-2xl md:text-3xl text-gradient">Let's Connect</CardTitle>
                 </div>
-                <CardDescription className="text-base">
+                <CardDescription className="text-base md:text-lg leading-relaxed">
                   I'm always open to discussing new opportunities, sharing knowledge, 
                   or collaborating on interesting projects. Feel free to reach out!
                 </CardDescription>
@@ -135,26 +135,26 @@ const Contact = () => {
                     href={item.href}
                     target={item.href.startsWith('http') ? '_blank' : undefined}
                     rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors group"
+                    className="flex items-center gap-5 p-5 rounded-xl bg-muted/50 hover:bg-muted transition-all duration-300 hover:scale-105 hover:shadow-card group"
                   >
-                    <div className="flex-shrink-0">
-                      <item.icon className="h-5 w-5 text-primary group-hover:text-accent transition-colors" />
+                    <div className="flex-shrink-0 p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                      <item.icon className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <p className="font-medium text-sm text-muted-foreground">{item.label}</p>
-                      <p className="text-foreground group-hover:text-primary transition-colors">
+                      <p className="font-semibold text-muted-foreground text-sm">{item.label}</p>
+                      <p className="text-foreground font-medium group-hover:text-primary transition-colors text-lg">
                         {item.value}
                       </p>
                     </div>
                   </a>
                 ))}
                 
-                <div className="mt-8 p-6 bg-secondary/50 rounded-lg">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                <div className="mt-8 p-6 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl">
+                  <div className="flex items-start gap-4">
+                    <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold mb-2">Current Location</h3>
-                      <p className="text-muted-foreground text-sm">
+                      <h3 className="font-semibold mb-3 text-lg">Current Location</h3>
+                      <p className="text-muted-foreground leading-relaxed">
                         Based in India, available for remote collaboration and 
                         local opportunities in the tech industry.
                       </p>
@@ -166,20 +166,20 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="animate-slide-in-left">
-            <Card className="tech-card border-0 shadow-none">
-              <CardHeader>
-                <CardTitle className="text-2xl text-gradient">Send a Message</CardTitle>
-                <CardDescription>
+          <div className="animate-fade-in">
+            <Card className="portfolio-card border-0 shadow-card">
+              <CardHeader className="pb-6">
+                <CardTitle className="text-2xl md:text-3xl text-gradient">Send a Message</CardTitle>
+                <CardDescription className="text-base md:text-lg">
                   Have a question or want to work together? I'd love to hear from you.
                 </CardDescription>
               </CardHeader>
               
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
+                      <label htmlFor="name" className="text-sm font-semibold">
                         Full Name *
                       </label>
                       <Input
@@ -189,12 +189,12 @@ const Contact = () => {
                         onChange={handleChange}
                         placeholder="Your full name"
                         required
-                        className="bg-background"
+                        className="bg-background h-12 text-base"
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
+                      <label htmlFor="email" className="text-sm font-semibold">
                         Email Address *
                       </label>
                       <Input
@@ -205,13 +205,13 @@ const Contact = () => {
                         onChange={handleChange}
                         placeholder="your.email@example.com"
                         required
-                        className="bg-background"
+                        className="bg-background h-12 text-base"
                       />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium">
+                    <label htmlFor="subject" className="text-sm font-semibold">
                       Subject *
                     </label>
                     <Input
@@ -221,12 +221,12 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="What's this about?"
                       required
-                      className="bg-background"
+                      className="bg-background h-12 text-base"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
+                    <label htmlFor="message" className="text-sm font-semibold">
                       Message *
                     </label>
                     <Textarea
@@ -237,23 +237,23 @@ const Contact = () => {
                       placeholder="Tell me about your project, question, or how we can work together..."
                       required
                       rows={6}
-                      className="bg-background resize-none"
+                      className="bg-background resize-none text-base"
                     />
                   </div>
                   
                   <Button 
                     type="submit" 
-                    className="w-full btn-hero"
+                    className="w-full btn-primary h-12 text-base"
                     disabled={isLoading}
                   >
                     {isLoading ? (
                       <>
-                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-foreground mr-2"></div>
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-primary-foreground mr-3"></div>
                         Sending...
                       </>
                     ) : (
                       <>
-                        <Send className="mr-2 h-4 w-4" />
+                        <Send className="mr-3 h-5 w-5" />
                         Send Message
                       </>
                     )}
@@ -265,27 +265,27 @@ const Contact = () => {
         </div>
 
         {/* Additional Information */}
-        <div className="mt-16 grid md:grid-cols-3 gap-6">
-          <div className="text-center tech-card animate-fade-in-up">
-            <MessageCircle className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-2">Quick Response</h3>
-            <p className="text-muted-foreground text-sm">
+        <div className="mt-16 grid md:grid-cols-3 gap-8">
+          <div className="text-center tech-card animate-fade-in">
+            <MessageCircle className="h-16 w-16 text-primary mx-auto mb-6" />
+            <h3 className="text-xl md:text-2xl font-bold mb-4">Quick Response</h3>
+            <p className="text-muted-foreground leading-relaxed">
               I typically respond to messages within 24 hours during weekdays.
             </p>
           </div>
           
-          <div className="text-center tech-card animate-fade-in-up">
-            <Github className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-2">Open Source</h3>
-            <p className="text-muted-foreground text-sm">
+          <div className="text-center tech-card animate-fade-in">
+            <Github className="h-16 w-16 text-primary mx-auto mb-6" />
+            <h3 className="text-xl md:text-2xl font-bold mb-4">Open Source</h3>
+            <p className="text-muted-foreground leading-relaxed">
               Interested in contributing to or collaborating on open source projects.
             </p>
           </div>
           
-          <div className="text-center tech-card animate-fade-in-up">
-            <Linkedin className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-2">Professional Network</h3>
-            <p className="text-muted-foreground text-sm">
+          <div className="text-center tech-card animate-fade-in">
+            <Linkedin className="h-16 w-16 text-primary mx-auto mb-6" />
+            <h3 className="text-xl md:text-2xl font-bold mb-4">Professional Network</h3>
+            <p className="text-muted-foreground leading-relaxed">
               Let's connect professionally and expand our tech networks together.
             </p>
           </div>

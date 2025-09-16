@@ -4,17 +4,20 @@ import About from '@/components/About';
 import Skills from '@/components/Skills';
 import Portfolio from '@/components/Portfolio';
 import Contact from '@/components/Contact';
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <Hero />
-      <About />
-      <Skills />
-      <Portfolio />
-      <Contact />
-    </div>
+    <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
+      <div className="min-h-screen bg-background">
+        <Header />
+        <Hero />
+        <About />
+        <Skills />
+        <Portfolio />
+        <Contact />
+      </div>
+    </ThemeProvider>
   );
 };
 

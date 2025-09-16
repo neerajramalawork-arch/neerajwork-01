@@ -17,8 +17,7 @@ const Skills = () => {
       icon: Code,
       skills: [
         { name: "Python", level: 85, description: "Primary programming language for projects and problem-solving" },
-        { name: "JavaScript", level: 65, description: "Web development and frontend technologies" },
-        { name: "SQL", level: 70, description: "Database management and queries" },
+        { name: "Java", level: 75, description: "Object-oriented programming and enterprise applications" },
       ]
     },
     {

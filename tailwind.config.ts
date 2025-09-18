@@ -13,10 +13,6 @@ export default {
       },
     },
     extend: {
-      fontFamily: {
-        'heading': ['Poppins', 'sans-serif'],
-        'body': ['Roboto', 'sans-serif'],
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -88,16 +84,6 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fadeIn 0.6s ease-out",
-        "slide-up": "slideUp 0.6s ease-out",
-        "hover-scale": "hoverScale 0.3s ease-out",
-      },
-      boxShadow: {
-        'card': 'var(--shadow-card)',
-        'card-hover': 'var(--shadow-card-hover)',
-      },
-      spacing: {
-        'section': '5rem', /* 80px */
       },
     },
   },

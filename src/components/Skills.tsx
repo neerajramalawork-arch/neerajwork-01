@@ -57,14 +57,14 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="section-padding px-6">
-      <div className="container mx-auto max-w-7xl">
+    <section id="skills" className="py-20 px-6">
+      <div className="container mx-auto max-w-6xl">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
             Skills & Expertise
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Current competencies and areas of continuous learning and development.
           </p>
         </div>
@@ -74,20 +74,20 @@ const Skills = () => {
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={category.title}
-              className="tech-card animate-slide-up"
+              className="tech-card animate-fade-in-up"
               style={{ animationDelay: `${categoryIndex * 0.1}s` }}
             >
-              <div className="flex items-center mb-8">
-                <category.icon className="h-8 w-8 text-primary mr-4" />
-                <h3 className="text-2xl md:text-3xl font-bold text-gradient">{category.title}</h3>
+              <div className="flex items-center mb-6">
+                <category.icon className="h-6 w-6 text-primary mr-3" />
+                <h3 className="text-2xl font-bold text-gradient">{category.title}</h3>
               </div>
               
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skill.name} className="space-y-3">
                     <div className="flex justify-between items-center">
-                      <h4 className="font-semibold text-lg">{skill.name}</h4>
-                      <span className="text-base text-primary font-bold">{skill.level}%</span>
+                      <h4 className="font-semibold">{skill.name}</h4>
+                      <span className="text-sm text-primary font-medium">{skill.level}%</span>
                     </div>
                     
                     <div className="skill-bar">
@@ -100,7 +100,7 @@ const Skills = () => {
                       />
                     </div>
                     
-                    <p className="text-sm text-muted-foreground leading-relaxed">{skill.description}</p>
+                    <p className="text-sm text-muted-foreground">{skill.description}</p>
                   </div>
                 ))}
               </div>
@@ -109,18 +109,18 @@ const Skills = () => {
         </div>
 
         {/* Currently Learning */}
-        <div className="tech-card animate-fade-in mb-12">
-          <div className="flex items-center mb-8">
-            <BookOpen className="h-8 w-8 text-primary mr-4" />
-            <h3 className="text-2xl md:text-3xl font-bold text-gradient">Currently Learning</h3>
+        <div className="tech-card animate-fade-in-up">
+          <div className="flex items-center mb-6">
+            <BookOpen className="h-6 w-6 text-primary mr-3" />
+            <h3 className="text-2xl font-bold text-gradient">Currently Learning</h3>
           </div>
           
-          <p className="text-muted-foreground mb-8 text-base md:text-lg leading-relaxed">
+          <p className="text-muted-foreground mb-8">
             I'm committed to continuous learning and staying updated with emerging technologies. 
             Here are the areas I'm actively developing:
           </p>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {learningAreas.map((area, index) => (
               <div
                 key={area.name}
@@ -128,13 +128,13 @@ const Skills = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex justify-between items-center">
-                  <h4 className="font-semibold text-lg">{area.name}</h4>
-                  <span className="text-sm text-accent font-bold">Learning</span>
+                  <h4 className="font-medium">{area.name}</h4>
+                  <span className="text-sm text-primary font-medium">Learning</span>
                 </div>
                 
                 <div className="skill-bar">
                   <div
-                    className="skill-progress bg-accent"
+                    className="skill-progress"
                     style={{
                       width: animateProgress ? `${area.progress}%` : '0%',
                       transitionDelay: `${index * 0.2 + 1}s`
@@ -147,27 +147,27 @@ const Skills = () => {
         </div>
 
         {/* Skills Summary */}
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center tech-card animate-fade-in">
-            <MessageCircle className="h-16 w-16 text-primary mx-auto mb-6" />
-            <h3 className="text-xl md:text-2xl font-bold mb-4">Communication</h3>
-            <p className="text-muted-foreground leading-relaxed">
+        <div className="grid md:grid-cols-3 gap-6 mt-12">
+          <div className="text-center tech-card animate-fade-in-up">
+            <MessageCircle className="h-12 w-12 text-primary mx-auto mb-4" />
+            <h3 className="text-xl font-bold mb-2">Communication</h3>
+            <p className="text-muted-foreground">
               Strong verbal and written communication skills for effective collaboration.
             </p>
           </div>
           
-          <div className="text-center tech-card animate-fade-in">
-            <Users className="h-16 w-16 text-primary mx-auto mb-6" />
-            <h3 className="text-xl md:text-2xl font-bold mb-4">Team Leadership</h3>
-            <p className="text-muted-foreground leading-relaxed">
+          <div className="text-center tech-card animate-fade-in-up">
+            <Users className="h-12 w-12 text-primary mx-auto mb-4" />
+            <h3 className="text-xl font-bold mb-2">Team Leadership</h3>
+            <p className="text-muted-foreground">
               Experience in managing teams and coordinating project deliverables.
             </p>
           </div>
           
-          <div className="text-center tech-card animate-fade-in">
-            <BookOpen className="h-16 w-16 text-primary mx-auto mb-6" />
-            <h3 className="text-xl md:text-2xl font-bold mb-4">Continuous Learning</h3>
-            <p className="text-muted-foreground leading-relaxed">
+          <div className="text-center tech-card animate-fade-in-up">
+            <BookOpen className="h-12 w-12 text-primary mx-auto mb-4" />
+            <h3 className="text-xl font-bold mb-2">Continuous Learning</h3>
+            <p className="text-muted-foreground">
               Committed to staying updated with the latest technology trends.
             </p>
           </div>
